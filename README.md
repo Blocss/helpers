@@ -1,4 +1,4 @@
-# Blocss Helpers – v0.0.1
+# Blocss Helpers – v1.0.0
 
 [Blocss](https://github.com/Blocss/blocss/) component helpers. A series of helper classes to use arbitrarily. Only use a helper class if an element/component doesn’t already have a class to which you could apply this styling.
 
