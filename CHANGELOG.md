@@ -1,5 +1,6 @@
 == HEAD
 
-== 0.0.1 (Dec 15, 2013)
+== 1.0.0 (Dec 28, 2013)
 
+* Removed unused helpers
 * Imported blocss helpers
