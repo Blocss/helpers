@@ -4,8 +4,8 @@
     $HELPERS
     A series of helper classes to use arbitrarily. Only use a helper class if an
     element/component doesn’t already have a class to which you could apply this
-    styling, e.g. if you need to float `.main-nav` left then add `float:left;`
-    to that ruleset as opposed to adding the `.fl` class to the markup.
+    styling, e.g. if you need to float `.nav` left then add `float:left;`
+    to that ruleset as opposed to adding the `.float--left` class to the markup.
 \*----------------------------------------------------------------------------*/
 
 /**
@@ -24,7 +24,7 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 
 
 
-/* Structural
+/*  Structural
 \*----------------------------------------------------------------------------*/
 
 /**
@@ -44,32 +44,20 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 /**
  * Vertical rhythm helpers
  */
-.sign {
-    @include rem(margin-bottom, $space);
+.flatten {
+    margin-bottom: 0 !important;
 }
 /* half margin-bottom */
 .sign--half {
-    @include rem(margin-bottom, $space*.5);
+    @include rem(margin-bottom, $space-half);
+}
+/* margin-bottom */
+.sign {
+    @include rem(margin-bottom, $space);
 }
 /* doubled up margin-bottom */
-.sign--double {
+.sign--large {
     @include rem(margin-bottom, $space*2);
-}
-/* tripled margin-bottom */
-.sign--triple {
-    @include rem(margin-bottom, $space*3);
-}
-/* quadrupled margin-bottom */
-.sign--quadruple {
-    @include rem(margin-bottom, $space*4);
-}
-/* quintupled margin-bottom */
-.sign--quintuple {
-    @include rem(margin-bottom, $space*5);
-}
-/* sextupled margin-bottom */
-.sign--sextuple {
-    @include rem(margin-bottom, $space*6);
 }
 
 
@@ -87,35 +75,8 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 }
 
 
-/**
- * Full bleed
- */
-.full-bleed {
-    @include rem(margin-left, -$space);
-    @include rem(margin-right, -$space);
 
-    .islet & {
-        @include rem(margin-left, -$space-half);
-        @include rem(margin-right, -$space-half);
-    }
-
-    .continent & {
-        @include rem(margin-left, -$space*2);
-        @include rem(margin-right, -$space*2);
-    }
-}
-
-
-/**
- * Remove margin bottom
- */
-.flatten {
-    margin-bottom: 0 !important;
-}
-
-
-
-/* Textual
+/*  Textual
 \*----------------------------------------------------------------------------*/
 
 /**
@@ -178,53 +139,8 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 
 
 
-/* Misc
+/*  Misc
 \*----------------------------------------------------------------------------*/
-
-/**
- * Add a help cursor to any element that gives the user extra information on
- * `:hover`.
- */
-.informative {
-    cursor: help !important;
-}
-
-
-/**
- * Align items to the right where they imply progression/movement forward.
- */
-.proceed {
-    text-align:right!important;
-}
-
-
-/**
- * Add a right-angled quote to links that imply movement, e.g.:
- */
-.go:after {
-    content:"\00A0»"!important;
-}
-
-
-/**
- * Image replacement
- */
-.ir {
-    display: block;
-    border: 0;
-    text-indent: -999em;
-    overflow: hidden;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    text-align: left;
-    direction: ltr;
-    *line-height: 0;
-
-    br {
-        display: none;
-    }
-}
-
 
 /**
  * Hide from screanreaders & browsers
@@ -261,14 +177,6 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 .visuallyhidden {
     @include visuallyhidden;
 }
-
-
-
-
-
-/*----------------------------------------------------------------------------*\
-    $STATE
-\*----------------------------------------------------------------------------*/
 
 /**
  * Visuallyhidden based on breakpoint
