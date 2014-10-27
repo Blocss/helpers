@@ -1,4 +1,5 @@
-/*! blocss-helpers v1.0.0 | MIT License | github.com/Blocss */
+@charset "UTF-8";
+/*! blocss-helpers v1.0.1 | MIT License | github.com/Blocss */
 
 /*----------------------------------------------------------------------------*\
     $HELPERS
@@ -43,8 +44,11 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 
 /**
  * Vertical rhythm helpers
+ *
+ * ^deprecated: `.flatten`
  */
-.flatten {
+.flatten,
+.sign--flat {
     margin-bottom: 0 !important;
 }
 /* half margin-bottom */
@@ -95,13 +99,18 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 
 /**
  * Font weight
+ *
+ * ^deprecated: `.weight--x`
  */
+.text--light,
 .weight--light {
     font-weight: 300 !important;
 }
+.text--normal,
 .weight--normal {
     font-weight: 400 !important;
 }
+.text--semibold,
 .weight--semibold {
     font-weight: 600 !important;
 }
@@ -109,13 +118,18 @@ $breakpoint-has-visuallyhidden:     ()                      !default;
 
 /**
  * Capitals/lowercase
+ *
+ * ^deprecated: non prefixed with `text--`
  */
+.text--caps,
 .caps {
     text-transform: uppercase !important;
 }
+.text--lowercase,
 .lowercase {
     text-transform: lowercase !important;
 }
+.text--firstcap,
 .firstcap {
     text-transform: capitalize !important;
 }
